@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Odontologos</title>
+    <script th:src="@{/js/odontologoRegistro.js}"></script>
+</head>
+
+<body>
+
+<h1>Sing Up</h1>
+<h3>Complete el formulario para registrar un odontologo</h3>
+<form id="add_new_odontologo">
+
+    <div class="form-group">
+
+        <label class="control-label" for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" name="nombre" required>
+
+    </div>
+
+    <div class="form-group">
+
+        <label class="control-label" for="apellido">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido" name="apellido"
+               required>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label class="control-label" for="matricula">Matricula:</label>
+        <input type="text" class="form-control" id="matricula" placeholder="Ingrese la matricula" name="matricula"
+               required>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-danger" id="btn-add-new-odontologo">Registrar</button>
+
+</form>
+
+</body>
+
+</html>
