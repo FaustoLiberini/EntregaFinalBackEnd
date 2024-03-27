@@ -19,7 +19,7 @@ import java.util.List;
 public class OdontologoService implements IOdontologoService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(PacienteService.class);
-    private final ModelMapper modelMapper;
+    private  ModelMapper modelMapper;
     private OdontologoRepository odontologoRepository;
 
     public OdontologoService(OdontologoRepository odontologoRepository, ModelMapper modelMapper) {

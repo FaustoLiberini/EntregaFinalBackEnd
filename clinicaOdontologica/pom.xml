@@ -12,7 +12,7 @@
     <artifactId>clinicaOdontologica</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>clinicaOdontologica</name>
-    <description> Clinica Odontologica Trabajo Final con Spring Boot</description>
+    <description>Clinica Odontologica Trabajo Final con Spring Boot</description>
     <properties>
         <java.version>17</java.version>
     </properties>

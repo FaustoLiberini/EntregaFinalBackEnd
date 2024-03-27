@@ -2,7 +2,6 @@ package com.backend.clinicaOdontologica.service.impl;
 
 import com.backend.clinicaOdontologica.dto.entry.OdontologoEntryDto;
 import com.backend.clinicaOdontologica.dto.exit.OdontologoExitDto;
-import com.backend.clinicaOdontologica.service.impl.OdontologoService;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -24,7 +23,7 @@ public class OdontologoServiceTest {
 
     @Test
     @Order(1)
-    void debeRegistrarUnOdontologoConNombreMessi_yRetornarSuId(){
+    void debeRegistrarUnOdontologoConNombreMessi_yRetornarSuId() {
 
         OdontologoEntryDto odontologoEntryDto = new OdontologoEntryDto("Messi", "Poen", 3412563);
 
@@ -38,13 +37,13 @@ public class OdontologoServiceTest {
 
     @Test
     @Order(2)
-    void debieraEliminarElOdontologoId1(){
+    void debieraEliminarElOdontologoId1() {
         assertDoesNotThrow(() -> odontologoService.eliminarOrdontologoPorId(1L));
     }
 
     @Test
     @Order(3)
-    void debieraDevolverUnaListaVacia(){
+    void debieraDevolverUnaListaVacia() {
         List<OdontologoExitDto> listaOdontologo = odontologoService.listarOdontologo();
 
         assertTrue(listaOdontologo.isEmpty());

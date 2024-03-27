@@ -1,8 +1,6 @@
 package com.backend.clinicaOdontologica.controller;
 
-import com.backend.clinicaOdontologica.dto.entry.PacienteEntryDto;
 import com.backend.clinicaOdontologica.dto.entry.TurnoEntryDto;
-import com.backend.clinicaOdontologica.dto.exit.PacienteExitDto;
 import com.backend.clinicaOdontologica.dto.exit.TurnoExitDto;
 import com.backend.clinicaOdontologica.exceptions.BadRequestException;
 import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;

@@ -17,7 +17,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestPropertySource(locations = "classpath:application-test.properties")
@@ -28,7 +27,7 @@ public class PacienteServiceTest {
 
     @Test
     @Order(1)
-    void debeRegistrarseUnPacienteConNombreAswath_YRetornarSuId(){
+    void debeRegistrarseUnPacienteConNombreAswath_YRetornarSuId() {
 
         PacienteEntryDto pacienteEntryDto = new PacienteEntryDto("Aswath", "Damodaran", 16343122, LocalDate.of(2024, 3, 28), new DomicilioEntryDto("Junin", 123, "San Martin", "Lobos"));
 
@@ -41,13 +40,13 @@ public class PacienteServiceTest {
 
     @Test
     @Order(2)
-    void deberiaEliminarElPacienteConId1(){
+    void deberiaEliminarElPacienteConId1() {
         assertDoesNotThrow(() -> pacienteService.eliminarPacientePorId(1L));
     }
 
     @Test
     @Order(3)
-    void deberiaDevolverUnaListaVacia(){
+    void deberiaDevolverUnaListaVacia() {
         List<PacienteExitDto> listaPacientes = pacienteService.listarPacientes();
 
 

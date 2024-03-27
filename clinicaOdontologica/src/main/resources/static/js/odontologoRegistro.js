@@ -20,9 +20,6 @@ window.addEventListener('load', function () {
     .then(response => response.json())
     .then(data => {
 
-                //Si no hay ningún error,
-                //se muestra un mensaje diciendo que la película
-                //fue agregada
                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
 
                     '<button type="button" class="close" ' +

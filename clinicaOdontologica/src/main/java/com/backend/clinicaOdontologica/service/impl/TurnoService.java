@@ -4,8 +4,6 @@ import com.backend.clinicaOdontologica.dto.entry.TurnoEntryDto;
 import com.backend.clinicaOdontologica.dto.exit.OdontologoExitDto;
 import com.backend.clinicaOdontologica.dto.exit.PacienteExitDto;
 import com.backend.clinicaOdontologica.dto.exit.TurnoExitDto;
-import com.backend.clinicaOdontologica.entity.Odontologo;
-import com.backend.clinicaOdontologica.entity.Paciente;
 import com.backend.clinicaOdontologica.entity.Turno;
 import com.backend.clinicaOdontologica.exceptions.BadRequestException;
 import com.backend.clinicaOdontologica.exceptions.ResourceNotFoundException;
@@ -25,8 +23,8 @@ public class TurnoService implements ITurnoService {
     private final Logger LOGGER = LoggerFactory.getLogger(PacienteService.class);
     private final PacienteService pacienteService;
     private final OdontologoService odontologoService;
-    private TurnoRepository turnoRepository;
     private final ModelMapper modelMapper;
+    private TurnoRepository turnoRepository;
 
     public TurnoService(TurnoRepository turnoRepository, ModelMapper modelMapper, PacienteService pacienteService, OdontologoService odontologoService) {
         this.turnoRepository = turnoRepository;
@@ -115,9 +113,9 @@ public class TurnoService implements ITurnoService {
 
             turnoActualizado.setFechaYHora(turnoEntryDto.getFechaYHora());
 
-            turnoActualizado =turnoRepository.save(turnoActualizado);
+            turnoActualizado = turnoRepository.save(turnoActualizado);
 
-           turnoExitDto = modelMapper.map(turnoActualizado, TurnoExitDto.class);
+            turnoExitDto = modelMapper.map(turnoActualizado, TurnoExitDto.class);
 
             LOGGER.warn("Turno actualizado: {}", turnoExitDto);
         } else {
@@ -142,7 +140,6 @@ public class TurnoService implements ITurnoService {
 
         return turnoExitDto;
     }
-
 
 
 }

@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -34,7 +33,6 @@ public class TurnoServiceTest {
     private PacienteService pacienteService;
 
 
-
     @Test
     @Order(1)
     void debeRegistrarUnTurnoCorrectamente_YRetornarunId() throws BadRequestException {
@@ -51,7 +49,7 @@ public class TurnoServiceTest {
         assertNotNull(odontologoExitDto.getId());
 
 
-        TurnoEntryDto turnoEntryDto = new TurnoEntryDto(pacienteExitDto.getId(),odontologoExitDto.getId(), LocalDateTime.of(2024, 3, 28, 14, 30, 45));
+        TurnoEntryDto turnoEntryDto = new TurnoEntryDto(pacienteExitDto.getId(), odontologoExitDto.getId(), LocalDateTime.of(2024, 3, 28, 14, 30, 45));
 
 
         TurnoExitDto turnoExitDto;
@@ -65,7 +63,7 @@ public class TurnoServiceTest {
 
     @Test
     @Order(2)
-    void debeDevolverUnaListaCon1Turno(){
+    void debeDevolverUnaListaCon1Turno() {
         List<TurnoExitDto> listaTurnos = turnoService.listarTurnos();
 
         assertEquals(1, listaTurnos.size());
@@ -74,14 +72,9 @@ public class TurnoServiceTest {
 
     @Test
     @Order(2)
-    void deberiaEliminarElTurnoConId1(){
+    void deberiaEliminarElTurnoConId1() {
         assertDoesNotThrow(() -> turnoService.eliminarTurnoPorId(1L));
     }
-
-
-
-
-
 
 
 }
