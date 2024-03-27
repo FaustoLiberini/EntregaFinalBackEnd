@@ -38,27 +38,27 @@ public class TurnoServiceTest {
     @Test
     @Order(1)
     void debeRegistrarUnTurnoCorrectamente_YRetornarunId() throws BadRequestException {
-        // Crear un paciente y obtener su ID
+
         PacienteEntryDto pacienteEntryDto = new PacienteEntryDto("Aswath", "Damodaran", 16343122, LocalDate.of(2024, 3, 28), new DomicilioEntryDto("Junin", 123, "San Martin", "Lobos"));
         PacienteExitDto pacienteExitDto = pacienteService.registrarPaciente(pacienteEntryDto);
         assertNotNull(pacienteExitDto);
         assertNotNull(pacienteExitDto.getId());
 
-        // Crear un odontólogo y obtener su ID
+
         OdontologoEntryDto odontologoEntryDto = new OdontologoEntryDto("Messi", "Poen", 3412563);
         OdontologoExitDto odontologoExitDto = odontologoService.registrarOdontologo(odontologoEntryDto);
         assertNotNull(odontologoExitDto);
         assertNotNull(odontologoExitDto.getId());
 
-        // Crear un turno con los IDs del paciente y el odontólogo
+
         TurnoEntryDto turnoEntryDto = new TurnoEntryDto(pacienteExitDto.getId(),odontologoExitDto.getId(), LocalDateTime.of(2024, 3, 28, 14, 30, 45));
 
-        // Registrar el turno
+
         TurnoExitDto turnoExitDto;
 
         turnoExitDto = turnoService.registrarTurno(turnoEntryDto);
 
-        // Verificar que se haya devuelto un ID no nulo
+
         assertNotNull(turnoExitDto);
         assertNotNull(turnoExitDto.getId());
     }
