@@ -19,7 +19,6 @@ public class ClinicaOdontologicaApplication {
         LOGGER.info("ClinicaOdontologica está corriendo...");
 
     }
-
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();

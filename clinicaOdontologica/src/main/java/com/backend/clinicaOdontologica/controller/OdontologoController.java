@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/odontologos")
+
 public class OdontologoController {
     private IOdontologoService odontologoService;
 
@@ -38,13 +39,13 @@ public class OdontologoController {
         return new ResponseEntity<>(odontologoService.registrarOdontologo(odontologo), HttpStatus.CREATED);
     }
 
+    // PUT
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<OdontologoExitDto> actualizarOdontologo(@RequestBody @Valid OdontologoEntryDto odontologo, @PathVariable Long id) {
         return new ResponseEntity<>(odontologoService.modificarOdontologo(odontologo, id), HttpStatus.OK);
     }
 
     // Delete
-
     @DeleteMapping("/eliminar/{id}")//localhost:8080/pacientes/eliminar?id=x
     public ResponseEntity<?> eliminarOdontologo(@RequestParam Long id) throws ResourceNotFoundException {
         odontologoService.eliminarOrdontologoPorId(id);
